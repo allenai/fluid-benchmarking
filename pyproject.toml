@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fluid-benchmarking"
+version = "0.1.0"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "LICENSE" }
+authors = [{ name = "Valentin Hofmann", email = "valentinh@allenai.org" }]
+
+dependencies = [
+  "huggingface_hub",
+  "ipykernel",
+  "pandas",
+  "rpy2>=3.5,<3.6"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]

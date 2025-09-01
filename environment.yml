@@ -1,0 +1,9 @@
+name: fluid-benchmarking
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - r-base=4.1.3
+  - r-essentials
+  - rpy2=3.5.*
