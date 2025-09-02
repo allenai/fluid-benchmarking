@@ -1,5 +1,8 @@
 # Fluid Language Model Benchmarking
 
+## Overview
+
+
 ## Setup
 
 ```sh
@@ -29,4 +32,19 @@ As a quick sanity check, open Python and run:
 R: R version 4.1.3 (2022-03-10)
 >>> print("catR:", ro.r("as.character(packageVersion('catR'))")[0])
 catR: 3.17
+```
+
+## Usage
+
+## Data
+
+## Citation
+
+```
+@inproceedings{hofmann2025fluid,
+  title={Fluid Language Model Benchmarking},
+  author={Valentin Hofmann and David Heineman and Ian Magnusson and Kyle Lo and Jesse Dodge and Maarten Sap and Pang Wei Koh and Chun Wang and Hannaneh Hajishirzi and Noah A. Smith},
+  booktitle={Second Conference on Language Modeling},
+  year={2025}
+}
 ```
