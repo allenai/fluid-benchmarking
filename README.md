@@ -67,10 +67,9 @@ abilities_fb, items_fb = evaluation.fluid_benchmarking(
 
 **Fitting IRT Models**
 
-We also provide code in `irt/` to fit 2PL IRT models with py-irt. Input is a JSONL file where each line looks like
+We provide code in `irt/` to fit 2PL IRT models with py-irt. The language model evaluation results used for model fitting should be in the form of a JSONL file where each line looks like
 `{"subject_id": "lm_1", "responses": {"item_1": 1, "item_2": 0, ...}}`.
-See the [py-irt docs](https://github.com/nd-ball/py-irt) for details.
-
+See the [py-irt documentation](https://github.com/nd-ball/py-irt) for details.
 
 ## Data
 
