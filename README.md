@@ -65,6 +65,12 @@ abilities_fb, items_fb = evaluation.fluid_benchmarking(
 `evaluation.fluid_benchmarking()` returns the provisional ability estimates and the administered items from the benchmark, which can be used for further analyses. For a complete, runnable example, see `notebooks/demo.ipynb`.
 
 
+**Fitting IRT Models**
+
+We also provide code in `irt/` to fit 2PL IRT models with py-irt. Input is a JSONL file where each line looks like
+`{"subject_id": "lm_1", "responses": {"item_1": 1, "item_2": 0, ...}}`.
+See the [py-irt docs](https://github.com/nd-ball/py-irt) for details.
+
 
 ## Data
 
