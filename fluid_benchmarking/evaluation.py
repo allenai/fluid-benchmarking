@@ -50,7 +50,7 @@ def random_ability(
     lm_responses = pd.Series(lm_responses)
     lm_responses[~lm_responses.index.isin(sample_idxes)] = ro.NA_Real
 
-    lm_responses_r = ro.IntVector(lm_responses)
+    lm_responses_r = rutils.vector2r(lm_responses)
     return catr.thetaEst(it=irt_model_r, x=lm_responses_r, method=estimation_method)[0]
 
 
@@ -100,8 +100,8 @@ def iterate_evals(
     if any(m in config.IRT_METHODS for m in methods):
         if irt_model is None:
             raise ValueError("irt_model is required for IRT-based methods.")
-        irt_model_r = rutils.pandas2r(irt_model.reset_index(drop=True))
-        lm_responses_r = ro.IntVector(lm_responses)
+        irt_model_r = rutils.df2r(irt_model)
+        lm_responses_r = rutils.vector2r(lm_responses)
 
     # Sample items in case not specified
     if samples_dict is None:

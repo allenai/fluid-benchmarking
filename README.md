@@ -39,16 +39,15 @@ catR: 3.17
 The core entry point to Fluid Benchmarking is `evaluation.fluid_benchmarking()`. Given language model evaluation results on a benchmark (`lm_responses`) and corresponding IRT parameters (`irt_model`), Fluid Benchmarking can be conducted as follows:
 
 ```python
-from rpy2 import robjects as ro
 from fluid_benchmarking import evaluation, rutils
 
 # Convert LM responses and IRT model to rpy2 objects
-lm_responses_r = ro.IntVector(lm_responses)
-irt_model_r = rutils.pandas2r(irt_model.reset_index(drop=True))
+lm_responses_r = rutils.vector2r(lm_responses)
+irt_model_r = rutils.df2r(irt_model)
 
 # Set hyperparameters
 start_ability = 0
-n_max = min(100, len(irt_model))
+n_max = 100
 selection_method = "MFI"  # Maximum Fisher information
 estimation_method = "BM"  # Bayes modal estimation (MAP)
 
@@ -64,7 +63,6 @@ abilities_fb, items_fb = evaluation.fluid_benchmarking(
 ```
 
 `evaluation.fluid_benchmarking()` returns the provisional ability estimates and the administered items from the benchmark, which can be used for further analyses. For a complete, runnable example, see `notebooks/demo.ipynb`.
-
 
 
 
