@@ -19,7 +19,7 @@
     <img src="https://img.shields.io/badge/Hugging_Face-Data-yellow?logo=huggingface&logoColor=white">
   </a>
  <a href="TBD">
-    <img src="https://img.shields.io/badge/Apache--2.0-License-D22128?logo=apache&logoColor=white">
+    <img src="https://img.shields.io/badge/Apache-2.0-D22128?logo=apache&logoColor=white">
  </a>
 </p>
 
