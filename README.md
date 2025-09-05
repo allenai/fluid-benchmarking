@@ -7,7 +7,7 @@
     <img src="https://img.shields.io/badge/License-TBD-555555.svg">
  </a>
  <a href="https://www.python.org/">
-    <img src="https://img.shields.io/badge/Python-3.10-blue.svg">
+    <img src="https://img.shields.io/badge/Python-3.10-3776AB?logo=python&logoColor=white">
  </a>
  <a href="https://www.r-project.org/">
     <img src="https://img.shields.io/badge/R-4.1-green.svg">
