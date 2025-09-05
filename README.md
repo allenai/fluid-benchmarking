@@ -85,8 +85,8 @@ abilities_fb, items_fb = evaluation.fluid_benchmarking(
 
 ### Fitting IRT Models
 
-We provide code in [`irt/fit_irt_model.py`](https://github.com/allenai/fluid-benchmarking/blob/main/irt/fit_irt_model.py) to fit 2PL IRT models with py-irt. The language model evaluation results used as input should be in the form of a JSONL file where each line looks like
-`{"subject_id": "lm_1", "responses": {"item_1": 1, "item_2": 0, ...}}` (see the [py-irt documentation](https://github.com/nd-ball/py-irt) for details). The output is a CSV file containing the IRT model parameters and can be directly used for Fluid Benchmarking.
+We provide code in [`irt/fit_irt_model.py`](https://github.com/allenai/fluid-benchmarking/blob/main/irt/fit_irt_model.py) to fit 2PL IRT models with [py-irt](https://github.com/nd-ball/py-irt). The language model evaluation results used as input should be in the form of a JSONL file where each line looks like
+`{"subject_id": "lm_1", "responses": {"item_1": 1, "item_2": 0, ...}}` (see the py-irt documentation for details). The output is a CSV file containing the IRT model parameters and can be directly used for Fluid Benchmarking.
 
 
 ### Replicating Experiments From Paper
