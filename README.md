@@ -3,7 +3,7 @@
 ## Overview
 
 
-## Setup
+## 🛠️ Setup
 
 ```sh
 git clone https://github.com/allenai/fluid-benchmarking
@@ -34,7 +34,7 @@ R: R version 4.1.3 (2022-03-10)
 catR: 3.17
 ```
 
-## Usage
+## 🚀 Usage
 
 The core entry point to Fluid Benchmarking is [`evaluation.fluid_benchmarking()`](https://github.com/allenai/fluid-benchmarking/blob/db30ec8f4b1275978156a473a314cfb73e18beff/fluid_benchmarking/evaluation.py#L57). Given language model evaluation results on a benchmark (`lm_responses`) and corresponding IRT parameters (`irt_model`), Fluid Benchmarking can be conducted as follows:
 
@@ -80,9 +80,9 @@ To replicate the main experiments from the paper, you can use the code in [`scri
 We provide code to replicate the main analyses from the paper in `notebooks/analysis.ipynb`.
 
 
-## Data
+## 🗂️ Data
 
-## Citation
+## 📚 Citation
 
 ```
 @inproceedings{hofmann2025fluid,
