@@ -2,12 +2,6 @@
   <h1>Fluid Language Model Benchmarking</h1>
 </div>
 
-| |
-|:--:|
-| [![Python: 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](#)
-[![arXiv: 2403.00742](https://img.shields.io/badge/arXiv-2403.00742-b31b1b.svg)](https://arxiv.org/abs/2403.00742)
-[![AI2 Blog](https://img.shields.io/badge/Ai2-Blog-F0529C)](https://allenai.org/blog/) |
-
 <p align="center">
  <a href="https://www.python.org/">
     <img src="https://img.shields.io/badge/Python-3.10-blue.svg">
@@ -20,6 +14,9 @@
   </a>
  <a href="https://allenai.org/blog/">
     <img src="https://img.shields.io/badge/Ai2-Blog-F0529C">
+  </a>
+  <a href="https://huggingface.co/datasets/allenai/fluid-benchmarking">
+    <img src="https://img.shields.io/badge/Data-Hugging_Face-yellow">
   </a>
 </p>
 
