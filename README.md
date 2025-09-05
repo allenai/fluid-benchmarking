@@ -9,9 +9,6 @@
  <a href="https://www.python.org/">
     <img src="https://img.shields.io/badge/Python-3.10-3776AB?logo=python&logoColor=white">
  </a>
- <a href="https://www.r-project.org/">
-    <img src="https://img.shields.io/badge/R-4.1-green?logo=r&logoColor=white">
- </a>
   <a href="https://huggingface.co/datasets/allenai/fluid-benchmarking">
     <img src="https://img.shields.io/badge/Hugging_Face-Data-yellow?logo=huggingface&logoColor=white">
   </a>
