@@ -16,7 +16,7 @@
     <img src="https://img.shields.io/badge/Blog-Ai2-F0529C">
   </a>
   <a href="https://huggingface.co/datasets/allenai/fluid-benchmarking">
-    <img src="https://img.shields.io/badge/Data-Hugging_Face-yellow">
+    <img src="https://img.shields.io/badge/Data-Hugging_Face-yellow?logo=huggingface&logoColor=white">
   </a>
  <a href="TBD">
     <img src="https://img.shields.io/badge/License-TBD-orange.svg">
