@@ -10,7 +10,7 @@
     <img src="https://img.shields.io/badge/R-4.1-green?logo=r&logoColor=white">
  </a>
  <a href="https://arxiv.org/abs/TBD">
-    <img src="https://img.shields.io/badge/ArXiv-TBD-B31B1B.svg">
+    <img src="https://img.shields.io/badge/ArXiv-TBD-B31B1B?logo=arxiv&logoColor=white">
   </a>
  <a href="https://allenai.org/blog/TBD">
     <img src="https://img.shields.io/badge/Blog-Ai2-F0529C">
