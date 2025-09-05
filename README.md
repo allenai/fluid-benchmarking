@@ -16,10 +16,10 @@
     <img src="https://img.shields.io/badge/Blog-Ai2-F0529C">
   </a>
   <a href="https://huggingface.co/datasets/allenai/fluid-benchmarking">
-    <img src="https://img.shields.io/badge/dataset-huggingface-FFD21E?logo=huggingface&logoColor=black">
+    <img src="https://img.shields.io/badge/Data-Hugging_Face-yellow">
   </a>
  <a href="https://www.python.org/">
-    <img src="https://img.shields.io/badge/License-TBD-555555.svg">
+    <img src="https://img.shields.io/badge/License-TBD-green.svg">
  </a>
 </p>
 
