@@ -103,6 +103,18 @@ We provide code to replicate the main analyses from the paper in `notebooks/anal
 
 ## 🗂️ Data
 
+The IRT models for the six benchmarks and the language model evaluation results live in a public [Hugging Face dataset](https://huggingface.co/datasets/allenai/fluid-benchmarking). Convenience loaders are provided in [`fluid_benchmarking/datasets.py`](https://github.com/allenai/fluid-benchmarking/blob/main/fluid_benchmarking/datasets.py). For example, IRT models can be loaded as follows:
+
+```python
+from fluid_benchmarking import datasets
+
+benchmark = "mmlu"
+irt_model = datasets.load_irt_model(
+    repo_id="allenai/fluid-benchmarking",
+    filename=f"data/irt_models/{benchmark}.csv",
+)
+```
+
 ## 📚 Citation
 
 ```
