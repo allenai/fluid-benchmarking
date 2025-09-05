@@ -7,7 +7,7 @@
     <img src="https://img.shields.io/badge/Python-3.10-3776AB?logo=python&logoColor=white">
  </a>
  <a href="https://www.r-project.org/">
-    <img src="https://img.shields.io/badge/R-4.1-276DC3?logo=r&logoColor=white">
+    <img src="https://img.shields.io/badge/R-4.1-green?logo=r&logoColor=white">
  </a>
  <a href="https://arxiv.org/">
     <img src="https://img.shields.io/badge/ArXiv-TBD-B31B1B.svg">
@@ -19,7 +19,7 @@
     <img src="https://img.shields.io/badge/Data-Hugging_Face-yellow">
   </a>
  <a href="https://www.python.org/">
-    <img src="https://img.shields.io/badge/License-TBD-green.svg">
+    <img src="https://img.shields.io/badge/License-TBD-orange.svg">
  </a>
 </p>
 
