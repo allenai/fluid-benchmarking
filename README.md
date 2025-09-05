@@ -13,10 +13,10 @@
     <img src="https://img.shields.io/badge/ArXiv-TBD-B31B1B?logo=arxiv&logoColor=white">
   </a>
  <a href="https://allenai.org/blog/TBD">
-    <img src="https://img.shields.io/badge/Blog-Ai2-F0529C">
+    <img src="https://img.shields.io/badge/Ai2-Blog-F0529C">
   </a>
   <a href="https://huggingface.co/datasets/allenai/fluid-benchmarking">
-    <img src="https://img.shields.io/badge/Data-Hugging_Face-yellow?logo=huggingface&logoColor=white">
+    <img src="https://img.shields.io/badge/Hugging_Face-Data-yellow?logo=huggingface&logoColor=white">
   </a>
  <a href="TBD">
     <img src="https://img.shields.io/badge/License-TBD-orange.svg">
