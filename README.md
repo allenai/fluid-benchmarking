@@ -3,8 +3,12 @@
 </div>
 
 <p align="center">
- <img src="https://img.shields.io/badge/Python-3.10-blue.svg">
-  <img src="https://img.shields.io/badge/R-4.1-green.svg">
+ <a href="https://www.python.org/">
+    <img src="https://img.shields.io/badge/Python-3.10-blue.svg">
+ </a>
+ <a href="https://www.r-project.org/">
+    <img src="https://img.shields.io/badge/R-4.1-green.svg">
+ </a>
  <a href="https://arxiv.org/">
     <img src="https://img.shields.io/badge/ArXiv-XXXX.XXXXX-b31b1b.svg">
   </a>
