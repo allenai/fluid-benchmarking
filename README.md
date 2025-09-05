@@ -115,7 +115,7 @@ irt_model = datasets.load_irt_model(
 )
 ```
 
-Also in the Hugging Face dataset:
+Also in the dataset:
 
 - Accuracy scores and IRT ability estimates for the 102 language models from the
   [Open LLM Leaderboard](https://huggingface.co/docs/leaderboards/open_llm_leaderboard/archive) used in the paper:
