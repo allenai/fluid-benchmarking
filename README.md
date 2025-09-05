@@ -1,8 +1,11 @@
 # Fluid Language Model Benchmarking
 
-<p align="center">
+
 ![Python: 3.10](https://img.shields.io/badge/python-3.10-blue.svg)
 [![arXiv](https://img.shields.io/badge/arXiv-2403.00742-b31b1b.svg)](https://arxiv.org/)
+
+<p align="center">
+
  <a href="https://allenai.org/blog/">
     <img alt="Blog" src="https://img.shields.io/badge/Ai2-Blog-F0529C">
   </a>
