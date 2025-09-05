@@ -9,16 +9,16 @@
  <a href="https://www.r-project.org/">
     <img src="https://img.shields.io/badge/R-4.1-green?logo=r&logoColor=white">
  </a>
- <a href="https://arxiv.org/">
+ <a href="https://arxiv.org/abs/TBD">
     <img src="https://img.shields.io/badge/ArXiv-TBD-B31B1B.svg">
   </a>
- <a href="https://allenai.org/blog/">
+ <a href="https://allenai.org/blog/TBD">
     <img src="https://img.shields.io/badge/Blog-Ai2-F0529C">
   </a>
   <a href="https://huggingface.co/datasets/allenai/fluid-benchmarking">
     <img src="https://img.shields.io/badge/Data-Hugging_Face-yellow">
   </a>
- <a href="https://www.python.org/">
+ <a href="TBD">
     <img src="https://img.shields.io/badge/License-TBD-orange.svg">
  </a>
 </p>
