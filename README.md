@@ -65,10 +65,20 @@ abilities_fb, items_fb = evaluation.fluid_benchmarking(
 `evaluation.fluid_benchmarking()` returns the provisional ability estimates and the administered items from the benchmark, which can be used for further analyses. For a complete, runnable example, see `notebooks/demo.ipynb`.
 
 
-**Fitting IRT Models**
+### Fitting IRT Models
 
 We provide code in `irt/fit_irt_model.py` to fit 2PL IRT models with py-irt. The language model evaluation results used as input should be in the form of a JSONL file where each line looks like
 `{"subject_id": "lm_1", "responses": {"item_1": 1, "item_2": 0, ...}}` (see the [py-irt documentation](https://github.com/nd-ball/py-irt) for details). The output is a CSV file containing the IRT model parameters and can be directly used for Fluid Benchmarking.
+
+
+### Replicating Experiments From Paper
+
+To replicate the main experiments from the paper, you can use the code in `scripts/run_experiments.py`. The script will evaluate [Amber-6.7B](https://huggingface.co/LLM360/Amber), [K2-65B](https://huggingface.co/LLM360/K2), [OLMo1-7B](https://huggingface.co/allenai/OLMo-7B-0724-hf), [OLMo2-7B](https://huggingface.co/allenai/OLMo-2-1124-7B), [Pythia-2.8B](https://huggingface.co/EleutherAI/pythia-2.8b), and [Pythia-6.9B](https://huggingface.co/EleutherAI/pythia-6.9b) on [ARC Challenge](https://huggingface.co/datasets/openai/gsm8k), [GSM8K](https://huggingface.co/datasets/openai/gsm8k), [HellaSwag](https://huggingface.co/datasets/Rowan/hellaswag), [MMLU](https://huggingface.co/datasets/cais/mmlu), [TruthfulQA](https://github.com/sylinrl/TruthfulQA), and [WinoGrande](https://huggingface.co/datasets/allenai/winogrande), using the methods Random, Random IRT, and Fluid Benchmarking (all with different sample sizes) from the paper, as well as full-benchmark accuracy and ability estimation.
+
+### Replicating Analyses From Paper
+
+We provide code to replicate the main analyses from the paper in `notebooks/analysis.ipynb`.
+
 
 ## Data
 
