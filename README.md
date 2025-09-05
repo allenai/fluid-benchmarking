@@ -1,12 +1,13 @@
 # Fluid Language Model Benchmarking
 
 <p align="center">
- <img alt="Python: 3.10" src="https://img.shields.io/badge/python-3.10-blue.svg">
+ <img src="https://img.shields.io/badge/Python-3.10-blue.svg">
+  <img src="https://img.shields.io/badge/R-4.1-green.svg">
  <a href="https://arxiv.org/">
-    <img alt="ArXiv XXXX.XXXXX" src="https://img.shields.io/badge/ArXiv-XXXX.XXXXX-b31b1b.svg">
+    <img src="https://img.shields.io/badge/ArXiv-XXXX.XXXXX-b31b1b.svg">
   </a>
  <a href="https://allenai.org/blog/">
-    <img alt="Blog" src="https://img.shields.io/badge/Ai2-Blog-F0529C">
+    <img src="https://img.shields.io/badge/Ai2-Blog-F0529C">
   </a>
 </p>
 
