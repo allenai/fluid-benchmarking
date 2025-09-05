@@ -1,4 +1,6 @@
-# Fluid Language Model Benchmarking
+<div align="center">
+  <h1>Fluid Language Model Benchmarking</h1>
+</div>
 
 <p align="center">
  <img src="https://img.shields.io/badge/Python-3.10-blue.svg">
