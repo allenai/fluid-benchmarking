@@ -36,7 +36,7 @@ catR: 3.17
 
 ## Usage
 
-The core entry point to Fluid Benchmarking is `evaluation.fluid_benchmarking()`. Given language model evaluation results on a benchmark (`lm_responses`) and corresponding IRT parameters (`irt_model`), Fluid Benchmarking can be conducted as follows:
+The core entry point to Fluid Benchmarking is [`evaluation.fluid_benchmarking()`](https://github.com/allenai/fluid-benchmarking/blob/db30ec8f4b1275978156a473a314cfb73e18beff/fluid_benchmarking/evaluation.py#L57). Given language model evaluation results on a benchmark (`lm_responses`) and corresponding IRT parameters (`irt_model`), Fluid Benchmarking can be conducted as follows:
 
 ```python
 from fluid_benchmarking import evaluation, rutils
@@ -62,12 +62,12 @@ abilities_fb, items_fb = evaluation.fluid_benchmarking(
 )
 ```
 
-`evaluation.fluid_benchmarking()` returns the provisional ability estimates and the administered items from the benchmark, which can be used for further analyses. For a complete, runnable example, see `notebooks/demo.ipynb`.
+`evaluation.fluid_benchmarking()` returns the provisional ability estimates and the administered items from the benchmark, which can be used for further analyses. For a complete, runnable example, see [`notebooks/demo.ipynb`](https://github.com/allenai/fluid-benchmarking/blob/main/notebooks/demo.ipynb).
 
 
 ### Fitting IRT Models
 
-We provide code in `irt/fit_irt_model.py` to fit 2PL IRT models with py-irt. The language model evaluation results used as input should be in the form of a JSONL file where each line looks like
+We provide code in [`irt/fit_irt_model.py`](https://github.com/allenai/fluid-benchmarking/blob/main/irt/fit_irt_model.py) to fit 2PL IRT models with py-irt. The language model evaluation results used as input should be in the form of a JSONL file where each line looks like
 `{"subject_id": "lm_1", "responses": {"item_1": 1, "item_2": 0, ...}}` (see the [py-irt documentation](https://github.com/nd-ball/py-irt) for details). The output is a CSV file containing the IRT model parameters and can be directly used for Fluid Benchmarking.
 
 
