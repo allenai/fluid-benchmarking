@@ -19,7 +19,7 @@
     <img src="https://img.shields.io/badge/Hugging_Face-Data-yellow?logo=huggingface&logoColor=white">
   </a>
  <a href="TBD">
-    <img src="https://img.shields.io/badge/License-TBD-orange.svg">
+    <img src="https://img.shields.io/badge/License-TBD-orange?logo=opensourceinitiative&logoColor=white">
  </a>
 </p>
 
