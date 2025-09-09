@@ -13,8 +13,14 @@ authors = [{ name = "Valentin Hofmann", email = "valentinh@allenai.org" }]
 dependencies = [
   "huggingface_hub",
   "ipykernel",
+  "numpy",
   "pandas",
-  "rpy2>=3.5,<3.6"
+  "tqdm",
+]
+
+[project.optional-dependencies]
+irt = [
+  "py-irt",
 ]
 
 [tool.setuptools.packages.find]
