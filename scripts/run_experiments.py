@@ -38,7 +38,7 @@ def run_experiments(
             config.IRT_MODELS_PATH.format(benchmark),
         )
 
-        # Sanity checks
+        # Sanity check
         assert irt_model_benchmark.columns[0] == "a"
         assert irt_model_benchmark.columns[1] == "b"
 
