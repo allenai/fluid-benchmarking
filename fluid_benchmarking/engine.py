@@ -52,7 +52,7 @@ def run_fluid_benchmarking(
     start_ability: float = 0.0,
     n_max: int = 100,
 
-    # Ability-estimation kwargs
+    # Ability estimation
     method: Literal["map", "mle", "MAP", "MLE"] = "map",
     D: float = 1.0,
     mu0: float = 0.0,
