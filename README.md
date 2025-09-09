@@ -48,7 +48,7 @@ Base install:
 python -m pip install -e .
 ```
 
-If you also need IRT training support, run:
+If you also need IRT training support:
 
 ```sh
 python -m pip install -e ".[irt]"
