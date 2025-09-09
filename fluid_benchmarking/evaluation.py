@@ -1,19 +1,15 @@
 import random
-from typing import Any, Dict, List, Optional, Sequence, Tuple, Union
+from typing import Dict, List, Optional, Sequence, Tuple, Union
 
 import numpy as np
 import pandas as pd
-import rpy2.robjects as ro
-import rpy2.robjects.packages as rpackages
 
-from fluid_benchmarking import config, rutils
-
-catr = rpackages.importr("catR")
+from fluid_benchmarking import config, engine, estimators
 
 # Type aliases
-Responses = Union[Sequence[int], Sequence[float], np.ndarray, pd.Series]
+IRTModel = Union[np.ndarray, pd.DataFrame]
 Idxes = Union[Sequence[int], np.ndarray, pd.Index]
-RObj = Any
+Responses = Union[Sequence[int], Sequence[float], np.ndarray, pd.Series]
     
 
 def full_accuracy(
@@ -23,11 +19,13 @@ def full_accuracy(
 
 
 def full_ability(
-    lm_responses_r: RObj,
-    irt_model_r: RObj,
-    estimation_method: str = "BM",
+    lm_responses: Responses,
+    irt_model: IRTModel,
+    estimation_method: str = "map",
 ) -> float:
-    return catr.thetaEst(it=irt_model_r, x=lm_responses_r, method=estimation_method)[0]
+    lm_responses = np.array(lm_responses)
+    irt_model = np.array(irt_model)
+    return estimators.ability_estimate(lm_responses, irt_model, estimation_method)
 
 
 def random_accuracy(
@@ -41,67 +39,52 @@ def random_accuracy(
 
 def random_ability(
     lm_responses: Responses,
-    irt_model_r: RObj,
+    irt_model: IRTModel,
     sample_idxes: Idxes,
-    estimation_method: str = "BM",
+    estimation_method: str = "map",
 ) -> float:
+    lm_responses = np.array(lm_responses, dtype=float, copy=True)
+    irt_model = np.array(irt_model)
 
     # Hide items not in random subset
-    lm_responses = pd.Series(lm_responses)
-    lm_responses[~lm_responses.index.isin(sample_idxes)] = ro.NA_Real
+    mask = np.isin(np.arange(len(lm_responses)), sample_idxes)
+    lm_responses[~mask] = np.nan
 
-    lm_responses_r = rutils.vector2r(lm_responses)
-    return catr.thetaEst(it=irt_model_r, x=lm_responses_r, method=estimation_method)[0]
+    return estimators.ability_estimate(lm_responses, irt_model, estimation_method)
 
 
 def fluid_benchmarking(
-    lm_responses_r: RObj,
-    irt_model_r: RObj,
+    lm_responses: Responses,
+    irt_model: IRTModel,
     start_ability: float,
     n_max: int,
-    selection_method: str = "MFI",
-    estimation_method: str = "BM",
+    estimation_method: str = "map",
 ) -> Tuple[List[float], List[int]]:
-
-    # Define hyperparameters
-    start = ro.ListVector({"theta": start_ability, "startSelect": selection_method})
-    test = ro.ListVector({"method": estimation_method, "itemSelect": selection_method})
-    stop = ro.ListVector({"rule": "length", "thr": n_max})
-    final = ro.ListVector({"method": estimation_method})
-
-    # Run fluid benchmarking
-    eval_fb = catr.randomCAT(
-        itemBank=irt_model_r,
-        responses=lm_responses_r,
-        start=start,
-        test=test,
-        stop=stop,
-        final=final
+    lm_responses = np.array(lm_responses)
+    irt_model = np.array(irt_model)
+    eval_fb = engine.run_fluid_benchmarking(
+        lm_responses=lm_responses,
+        irt_model=irt_model,
+        start_ability=start_ability,
+        n_max=n_max,
+        method=estimation_method,
     )
-
-    # Extract ability estimates and items
-    abilities_fb = list(eval_fb.rx("thetaProv")[0])
-    items_fb = [int(i) - 1 for i in list(eval_fb.rx2("testItems"))]  # Convert to 0-based indexing
-    return abilities_fb, items_fb
+    return eval_fb["abilities_fb"], eval_fb["items_fb"]
 
 
 def iterate_evals(
     lm_responses: Responses,
     methods: Sequence[str],
-    irt_model: Optional[pd.DataFrame] = None,
-    estimation_method_irt: str = "BM",
+    irt_model: Optional[IRTModel] = None,
+    estimation_method_irt: str = "map",
     samples_dict: Optional[Dict[int, np.ndarray]] = None,
     start_ability_fb: float = 0,
-    selection_method_fb: str = "MFI",
     seed: int = 0,
 ) -> Dict[str, Union[float, List[float], List[int]]]:
 
-    # Move to R
     if any(m in config.IRT_METHODS for m in methods):
         if irt_model is None:
             raise ValueError("irt_model is required for IRT-based methods.")
-        irt_model_r = rutils.df2r(irt_model)
-        lm_responses_r = rutils.vector2r(lm_responses)
 
     # Sample items in case not specified
     if samples_dict is None:
@@ -126,8 +109,8 @@ def iterate_evals(
     # Full ability
     if "full_ability" in methods:
         output["full_ability"] = full_ability(
-            lm_responses_r, 
-            irt_model_r,
+            lm_responses, 
+            irt_model,
             estimation_method_irt
         )
 
@@ -144,7 +127,7 @@ def iterate_evals(
         for n_samples in samples_dict:
             output[f"random_ability_{n_samples}"] = random_ability(
                 lm_responses, 
-                irt_model_r,
+                irt_model,
                 samples_dict[n_samples],
                 estimation_method_irt
             )
@@ -152,11 +135,10 @@ def iterate_evals(
     # Fluid Benchmarking
     if "fluid_benchmarking" in methods:
         abilities_fb, items_fb = fluid_benchmarking(
-            lm_responses_r,
-            irt_model_r,
+            lm_responses,
+            irt_model,
             start_ability_fb,
             max(samples_dict.keys()),
-            selection_method_fb,
             estimation_method_irt,
         )
         output["abilities_fb"] = abilities_fb

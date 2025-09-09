@@ -12,7 +12,7 @@ LMS = [
     "olmo1-7b",
     "olmo2-7b",
     "pythia-7b",
-    "pythia-3b"
+    "pythia-3b",
 ]
 
 BENCHMARKS = [
@@ -21,7 +21,7 @@ BENCHMARKS = [
     "hellaswag",
     "truthfulqa_mc2",
     "winogrande",
-    "mmlu"
+    "mmlu",
 ]
 
 METHODS = [
@@ -29,18 +29,17 @@ METHODS = [
     "full_ability",
     "random_accuracy",
     "random_ability",
-    "fluid_benchmarking"
+    "fluid_benchmarking",
 ]
 
 IRT_METHODS = [
     "full_ability", 
     "random_ability", 
-    "fluid_benchmarking"
+    "fluid_benchmarking",
 ]
 
 # Default parameters for IRT-based methods and Fluid Benchmarking
-ESTIMATION_METHOD_IRT = "BM"
-SELECTION_METHOD_FB = "MFI"
+ESTIMATION_METHOD_IRT = "map"
 
 # Default evaluation sample sizes
 N_SAMPLES_LIST = (
