@@ -38,6 +38,10 @@ def run_experiments(
             config.IRT_MODELS_PATH.format(benchmark),
         )
 
+        # Sanity checks
+        assert irt_model_benchmark.columns[0] == "a"
+        assert irt_model_benchmark.columns[1] == "b"
+
         # Determine random subset of benchmark items
         samples_dict = {}
         for n_samples in config.N_SAMPLES_LIST:
@@ -59,7 +63,9 @@ def run_experiments(
                 lm_eval_results[lm],
                 benchmark,
             )
-            assert (lm_eval_results_benchmark.index == irt_model_benchmark.index).all()  # Sanity check
+
+            # Sanity check
+            assert (lm_eval_results_benchmark.index == irt_model_benchmark.index).all()
 
             for checkpoint in tqdm.tqdm(
                 list(lm_eval_results_benchmark.columns),
@@ -74,7 +80,6 @@ def run_experiments(
                     estimation_method_irt=config.ESTIMATION_METHOD_IRT,
                     samples_dict=samples_dict,
                     start_ability_fb=start_ability,
-                    selection_method_fb=config.SELECTION_METHOD_FB,
                 )
                 row["benchmark"] = benchmark
                 row["lm"] = lm
