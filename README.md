@@ -28,14 +28,14 @@ git clone https://github.com/allenai/fluid-benchmarking
 cd fluid-benchmarking
 ```
 
-With `conda`:
+With conda:
 
 ```sh
 conda create -n fluid-benchmarking python=3.10
 conda activate fluid-benchmarking
 ```
 
-With `virtualenv`:
+With virtualenv:
 
 ```sh
 python -m virtualenv -p python3.10 fluid-benchmarking
@@ -61,25 +61,19 @@ python -m pip install -e ".[irt]"
 The core entry point to Fluid Benchmarking is [`evaluation.fluid_benchmarking()`](https://github.com/allenai/fluid-benchmarking/blob/db30ec8f4b1275978156a473a314cfb73e18beff/fluid_benchmarking/evaluation.py#L57). Given language model evaluation results on a benchmark (`lm_responses`) and corresponding IRT parameters (`irt_model`), Fluid Benchmarking can be conducted as follows:
 
 ```python
-from fluid_benchmarking import evaluation, rutils
-
-# Convert LM responses and IRT model to rpy2 objects
-lm_responses_r = rutils.vector2r(lm_responses)
-irt_model_r = rutils.df2r(irt_model)
+from fluid_benchmarking import evaluation
 
 # Set hyperparameters
 start_ability = 0
 n_max = 100
-selection_method = "MFI"  # Maximum Fisher information
-estimation_method = "BM"  # Bayes modal estimation (MAP)
+estimation_method = "map"  # Maximum a posteriori estimate
 
 # Run Fluid Benchmarking
 abilities_fb, items_fb = evaluation.fluid_benchmarking(
-    lm_responses_r=lm_responses_r,
-    irt_model_r=irt_model_r,
+    lm_responses=lm_responses,
+    irt_model=irt_model,
     start_ability=start_ability,
     n_max=n_max,
-    selection_method=selection_method,
     estimation_method=estimation_method,
 )
 ```
