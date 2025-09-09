@@ -9,7 +9,7 @@ def select_mfi(
     theta: float, 
     irt_model: np.ndarray, 
     used_mask: np.ndarray, 
-    D: float
+    D: float,
 ) -> int:
     """
     Select the next item by maximum Fisher information under a 2PL IRT model.
