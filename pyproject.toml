@@ -15,6 +15,8 @@ dependencies = [
   "ipykernel",
   "numpy",
   "pandas",
+  "scipy",
+  "tabulate",
   "tqdm",
 ]
 
