@@ -1,7 +1,7 @@
 # MIT License
 
 # Copyright (c) 2019 John Lalor <john.lalor@nd.edu> and Pedro Rodriguez <me@pedro.ai>
-# Modifications (c) 2025 Valentin Hofmann
+# Modifications (c) 2025 Allen Institute for AI
 
 # Adapted from: https://github.com/nd-ball/py-irt/blob/master/py_irt/models/two_param_logistic.py
 
